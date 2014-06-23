@@ -1,0 +1,71 @@
+# talkshow
+a netpage ppt-like display tool
+一个用网页显示的类似ppt演示软件的工具
+
+## 安装 Install
+$ sudo gem install talkshow
+
+## WHAT talkshow?
+
+这是一个网页形式的极轻量级的演示系统。
+它的目标是部分替代演示软件，例如ms-ppt。
+我想要全部替代恐怕也不难。
+
+## WHY talkshow?
+
+你是不是已经腻烦了演示软件的没完没了的编辑？
+你是不是已经腻烦了演示软件的没完没了的调整？
+你是不是已经腻烦了演示软件的没完没了的查找？
+好吧，至少我是这样：为什么不让它更简单些呢？
+
+通过talkshow，可以在一个文本文件中写下无数个页面的内容。
+
+- 要修改？
+直接在这个文件上就可以了。
+- 要调整？
+talkshow不需要调整——何必把百分之九十的时间放在百分之一的美观上呢？
+如果一定要，也不难。懂得css和html就可以了。
+- 要查找？
+对于文本文件来说，无数工具可以使用，只要你喜欢。
+- 没有你想要的功能？
+那你就自己动手写一个吧!^-^
+
+## HOW use it ? 
+JUST 2 STEP
+### first, write a yml file(第一步，写一个yml文件)
+把你的想法写在一个以yml后缀的空白文件中，如xxx.yml。
+
+这个文件可以分两部分。
+第一部分是brand和nav。用于左上角导航。
+第二部分是演示的内容。这个部分可以有无限多节。
+
+每一节以type为第一行。
+type规定了这个网页的类型。目前类型有：cover, pcover, tw, tww, tsw, tpw, tp, tpp, ts, tss七种。
+cover类型包含title、subtitle两个元素。
+pcover类型包含picture title subtitle三个元素。
+其他的类型t表示title， p表示picture，s表示table，w代表文字。
+
+例如：
+
+    brand: 首页标志
+    nav:
+      - 我的中心
+      - 二级目录
+      - 三级目录
+      - 当前目录
+    ---
+    type: cover
+    title: 页面标题（标题不能重复）
+    subtitle: 
+      - 副标题，可以多行
+    ---
+    ……
+
+### second, run talkshow（第二步，运行talkshow）
+保存好这个文件，就可以运行 `$ talkshow xxx.yml`来创建演示页面了。
+
+### now, you can see a xxx directroy, and all the netpage is inside it.
+可以看到xxx文件夹了吧？ 所有的网页文件都在里面！
+
+是不是很简单？
+对极了！
